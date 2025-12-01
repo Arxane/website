@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Vishwakarma | Projects Detail</title>
+    <<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            padding-top: 60px;
+            
+            background-image: radial-gradient(#121212 1px, transparent 1px), 
+                              radial-gradient(#121212 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .accent-color {
+            color: #616161;
+            font-weight: 600;
+        }
+        .text-body {
+            color: #c0c0c0;
+            line-height: 1.8;
+        }
+        .card-bg {
+            background-color: #080808;
+        }
+        .border-accent {
+            border-color: #333333;
+        }
+        .link-style {
+            color: #616161;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .link-style:hover {
+            color: #ffffff;
+        }
+        .font-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .max-w-prose {
+            max-width: 720px;
+        }
+
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #000000;
+            border-bottom: 1px solid #1a1a1a;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <nav class="fixed-header px-4 sm:px-6 lg:px-8 py-4">
+        <div class="max-w-prose mx-auto flex items-center space-x-6 sm:space-x-8 justify-center">
+            <a href="index.html" class="text-white text-sm font-mono font-semibold hover:text-white transition duration-200 link-style">
+                INDEX
+            </a>
+            
+            <a href="https://www.linkedin.com/in/mayankvish" target="_blank" aria-label="LinkedIn" class="link-style hover:text-white transition duration-200">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.565-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            
+            <a href="https://github.com/Arxane" target="_blank" aria-label="GitHub" class="link-style hover:text-white transition duration-200">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+            
+            <a href="https://x.com/kirill_egorov_6" target="_blank" aria-label="X (formerly Twitter)" class="link-style hover:text-white transition duration-200">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.814L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.717 6.231zm-1.161 17.52h1.833L7.387 4.126H5.55L17.083 19.77z"/></svg>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="max-w-prose mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-20">
+            <h1 class="text-3xl sm:text-4xl font-bold mb-1">
+                Project Portfolio
+            </h1>
+        </header>
+
+        <section id="refactorer" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">01. Semantic Code Refactorer</h2>
+            <p class="text-sm font-mono mb-2 accent-color">AI / Full-Stack Application</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: May 2025 - June 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                to automate intelligent, context-aware code improvements that go beyond simple syntax checking. this tool analyzes abstract semantics to suggest and execute complex transformations like renaming, restructuring, and simplification, vastly improving code quality and maintainability.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Architecture</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                <li><strong class="text-white">Frontend:</strong> Built with React to provide a seamless interface for inputting code, selecting refactoring types, and viewing the changes.</li>
+                <li><strong class="text-white">Backend:</strong> A robust FastAPI service handles concurrent requests and manages the application logic accompanied with PostgreSQL for data persistence.</li>
+                <li><strong class="text-white">AI Core:</strong> Leveraged the Gemini API with advanced prompt engineering techniques for context-aware code pattern detection and semantic transformation generation. Uses PostgreSQL for data persistence. </li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Gemini API</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">FastAPI</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">React</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PostgreSQL</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://github.com/Arxane/semantic-code-refactorer" class="link-style hover:text-white">View on GitHub &rarr;</a></p>
+        </section>
+
+        <section id="cancer-grading" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">02. Multi-modal Cancer Grading Framework</h2>
+            <p class="text-sm font-mono mb-2 accent-color">Deep Learning / Medical Vision Research</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: May 2025 - June 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                developed a deep learning solution under the MMVL Lab to improve the accuracy and reliability of cancer grading by integrating multiple data modalities, based on the principles of the "IHC Matters" research paper.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Methodology</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                <li><strong class="text-white">Model:</strong> Implemented an Attention-based Multiple Instance Learning (MIL) approach to handle whole-slide imaging data effectively. </li>
+                <li><strong class="text-white">Innovation:</strong> Featured a two-stage pipeline incorporating advanced techniques like feature fusion and Generative Models for enhanced representation learning.</li>
+                <li><strong class="text-white">Scale:</strong> Trained and validated the framework on a dataset comprising over 5,000 medical images.</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Computer Vision</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Multi-modal AI</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Generative Models</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://www.linkedin.com/company/machine-and-medical-vision-group-mmvg/" class="link-style hover:text-white">View MMVL Lab &rarr;</a></p>
+        </section>
+
+        <section id="tspn-impl" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">03. TSPN PyTorch Implementation</h2>
+            <p class="text-sm font-mono mb-2 accent-color">Research Module / Transformers</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: November 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                to create a high-fidelity, from-scratch implementation of the Transformer-based Set Prediction Network (TSPN). this serves as a foundational and flexible module for integrating set prediction capabilities into larger research-focused deep learning projects.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Implementation Details</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                <li><strong class="text-white">Core:</strong> Built the entire network from fundamental components in PyTorch, avoiding high-level wrappers. This approach ensures maximum control over layer implementation, optimization, and debugging. [Image of Transformer Architecture]</li>
+                <li><strong class="text-white">Application:</strong> Designed specifically to be used as a replaceable module within complex research architectures, emphasizing clear code structure and high performance on scientific datasets.</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Transformers</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Deep Learning</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">NumPy</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://github.com/Arxane/TSPN" class="link-style hover:text-white">View on GitHub &rarr;</a></p>
+        </section>
+
+        <section id="rust-editor" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">04. Rust Text Editor</h2>
+            <p class="text-sm font-mono mb-2 accent-color">Rust / Low-level Systems</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: May 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                to develop a high-performance, from-scratch text editor in Rust, focusing on low-level systems programming principles to ensure efficiency, safety, and extensibility.
+                ai assistance was used for code generation and debugging as this was my first major project in rust.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Implementation Details</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                <li><strong class="text-white">Core:</strong> Built the entire text editor from fundamental components in **Rust**, focusing on low-level systems programming principles to ensure efficiency, safety, and extensibility.</li>
+                <li><strong class="text-white">Application:</strong> Designed specifically to be a high-performance, extensible text editor suitable for various programming and writing tasks, emphasizing clear code structure and robust functionality.</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Rust</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Low-level Systems</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Systems Programming</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">crossterm</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://github.com/Arxane/Text-Editor" class="link-style hover:text-white">View on GitHub &rarr;</a></p>
+        </section>
+
+        <section id="diffused-cifar" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">05. Diffused CIFAR</h2>
+            <p class="text-sm font-mono mb-2 accent-color">Diffusion Model / Deep Learning</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: July 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                to develop a diffusion model from scratch in PyTorch, trained on CIFAR dataset.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Implementation Details</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                <li><strong class="text-white">Core:</strong> Built the entire diffusion model from fundamental components in PyTorch, focusing on low-level deep learning principles to ensure efficiency, safety, and extensibility.</li>
+                <li><strong class="text-white">Application:</strong> Designed specifically to be a high-performance, extensible diffusion model suitable for various image generation tasks, emphasizing clear code structure and robust functionality.</li>
+            </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Deep Learning</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Generative Models</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://github.com/Arxane/Diffused-CIFAR" class="link-style hover:text-white">View on GitHub &rarr;</a></p>
+        </section>
+
+        <section id="zk-snark" class="mb-20 card-bg p-8 rounded-lg border border-accent">
+            <h2 class="text-2xl font-semibold mb-2 text-white">06. ZK-SNARK</h2>
+            <p class="text-sm font-mono mb-2 accent-color">Zero-Knowledge Proof / Cryptography</p>
+            <p class="text-sm font-mono mb-6 accent-color">Timeline: August 2025</p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Goal & Impact</h3>
+            <p class="text-body mb-4">
+                to practice Rust by implementing a basic ZK-SNARK protocol using ArkWorks.
+                ai assistance was used for code generation and debugging.
+            </p>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Implementation Details</h3>
+            <ul class="list-disc pl-5 space-y-2 text-body mb-6">
+                    <li><strong class="text-white">Core:</strong> Built a basic ZK-SNARK protocol using ArkWorks in Rust.</li>
+                    <li><strong class="text-white">Application:</strong> Can be used as a base for complex Cryptography tasks.</li>
+                </ul>
+
+            <h3 class="text-lg font-semibold mb-2 text-white">Technologies</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Rust</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">ArkWorks</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Cryptography</span>
+                <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Zero-Knowledge Proofs</span>
+            </div>
+            <p class="text-sm font-mono text-body mt-4"><a href="https://github.com/Arxane/Basic-zk-SNARK-framework-using-arkWorks" class="link-style hover:text-white">View on GitHub &rarr;</a></p>
+        </section>
+
+        
+
+        <footer class="text-center pt-8 border-t border-gray-900">
+            <p class="text-sm text-gray-700 mt-2">
+                &copy; 2025 Mayank Vishwakarma.
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
