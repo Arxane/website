@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+
+
 /* Display */
 .flex {
   display: flex;
@@ -350,4 +352,19 @@
 /* Flex */
 .flex-1 {
   flex: 1 1 0%;
+}
+
+
+#network-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#network-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
