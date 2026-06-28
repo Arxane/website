@@ -1,484 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayank Vishwakarma</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            padding-top: 60px;
-            
-            background-image: radial-gradient(#121212 1px, transparent 1px), 
-                              radial-gradient(#121212 1px, transparent 1px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-        }
-        .accent-color {
-            color: #616161;
-            font-weight: 600;
-        }
-        .text-body {
-            color: #c0c0c0;
-            line-height: 1.8;
-        }
-        .card-bg {
-            background-color: #080808;
-        }
-        .border-accent {
-            border-color: #333333;
-        }
-        .bg-accent-glow {
-            background-color: #1a1a1a;
-            border: 1px solid #333333;
-        }
-        .link-style {
-            color: #616161;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        .link-style:hover {
-            color: #ffffff;
-        }
-        .font-mono {
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        .max-w-prose {
-            max-width: 720px;
-        }
-
-        .minimal-dot {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background-color: #616161;
-            border-radius: 50%;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-
-        .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: transparent;
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #1a1a1a;
-            z-index: 10;
-        }
-    </style>
 </head>
-<body class="antialiased min-h-screen">
-    <div id="network-container"></div>
 
-    <nav class="fixed-header px-4 sm:px-6 lg:px-8 py-4">
-        <div class="max-w-prose mx-auto flex items-center space-x-6 sm:space-x-8 justify-center">
-            <a href="project.html" class="text-white text-sm font-mono font-semibold hover:text-white transition duration-200 link-style">
-                PROJECTS
-            </a>
-            <a href="https://x.com/mayank_vish65" target="_blank" aria-label="X"
-            class="link-style hover:text-white transition duration-200">
-                <svg 
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-4 h-4 fill-current"
-                    aria-hidden="true">
-                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.9 1.153z"/>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="project.html" class="nav-link">PROJECTS</a>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <!-- Moon icon (shown in dark mode) -->
+                <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                </svg>
+                <!-- Sun icon (shown in light mode) -->
+                <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </button>
+
+            <a href="https://x.com/mayank_vish65" target="_blank" aria-label="X" class="nav-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.9 1.153z" />
                 </svg>
             </a>
-            <a href="https://www.linkedin.com/in/mayankvish" target="_blank" aria-label="LinkedIn" class="link-style hover:text-white transition duration-200">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.565-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+
+            <a href="https://www.linkedin.com/in/mayankvish" target="_blank" aria-label="LinkedIn" class="nav-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.565-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
             </a>
-            
-            <a href="https://github.com/Arxane" target="_blank" aria-label="GitHub" class="link-style hover:text-white transition duration-200">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+
+            <a href="https://github.com/Arxane" target="_blank" aria-label="GitHub" class="nav-icon">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
         </div>
     </nav>
-    
-    <div class="max-w-prose mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        
-        <header class="mb-20 flex items-center">
-            <img src="7552GgTV_400x400.jpg" alt="Nebula Background" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4 object-cover border border-gray-700"/>
-            
-            <div>
-                <h1 class="text-xl sm:text-2xl font-bold mb-1">
-                    Mayank Vishwakarma <span class="accent-color font-mono text-base sm:text-xl"></span>
-                </h1>
-                <p class="text-sm sm:text-base text-body">
-                    IIT Jodhpur | <a href="mailto:mayankvish65@gmail.com" class="link-style">Email</a>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg" style="background-image: url('pexels-eberhardgross-1367192.jpg')"></div>
+        <div class="hero-content">
+            <img src="7552GgTV_400x400.jpg" alt="Mayank Vishwakarma" class="hero-avatar">
+            <h1 class="hero-name">Mayank Vishwakarma</h1>
+            <p class="hero-sub">
+                IIT Jodhpur &nbsp;·&nbsp; <a href="mailto:mayankvish65@gmail.com">mayankvish65@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <main class="main-content" id="mainContent">
+        <div class="container">
+
+            <section class="section" id="about">
+                <span class="section-label">About</span>
+                <p class="about-text">
+                    a final year student at IIT Jodhpur, specializing in building novel deep learning systems &amp;
+                    products that solve complex tasks.
                 </p>
-            </div>
-        </header>
+                <p class="about-text">
+                    my passion lies in solving open problems, from AI to competitive programming.
+                </p>
+                <span class="about-mono">i hate high level api wrappers :)</span>
+                <span class="about-mono">i thrive in pressure :P</span>
+            </section>
 
-        <section id="about" class="mb-20">
-            <h2 class="text-lg font-mono mb-6 accent-color">01. About</h2>
-            <p class="text-lg text-body mb-6">
-                a final year student at IIT Jodhpur, specializing in building novel Deep Learning sytems & products solving complex tasks.
-            </p>
-            <p class="text-lg font-mono mb-6 accent-color">
-                i hate high level api wrappers :)
-            </p>
-            <p class="text-lg text-body mb-6">
-                my passion lies in solving open problems, from AI to competitive programming.
-            </p>
-            <p class="text-lg font-mono accent-color">
-                i thrive in pressure :P
-            </p>
-        </section>
+            <section class="section" id="experience">
+                <span class="section-label">Experience</span>
+                <div class="card-list">
 
-        <section id="experience" class="mb-20">
-            <h2 class="text-lg font-mono mb-8 accent-color">02. Experience</h2>
-            <div class="space-y-12">
+                    <div class="card">
+                        <div class="card-title">Undergraduate Researcher</div>
+                        <div class="card-meta">VL2G Lab &nbsp;·&nbsp; April 2026 – Present</div>
+                        <ul class="card-body">
+                            <li>working on next generation video-to-video retrieval and visual understanding</li>
+                            <li>studied and implemented various methodologies of semantic retrieval and visual
+                                understanding</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                    </div>
 
-                <div class="card-bg p-6 rounded-lg border border-accent">
-                    <h3 class="text-xl font-semibold mb-1 text-white">Undergraduate Researcher</h3>
-                    <p class="text-sm font-mono text-body mb-3">VL2G Lab | April 2026 - Present</p>
-                    <ul class="list-disc pl-5 space-y-2 text-body">
-                        <li>working on building next big things in the field of Video-to-Video Retrieval and Visual Understanding</li>
-                        <li>studied and implemented various methodologies of semantic retrieval and visual understanding</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono mt-4">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Python</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Deep Learning</span>
+                    <div class="card">
+                        <div class="card-title">Software Development Intern — AI/ML</div>
+                        <div class="card-meta">Nova VistaAI &nbsp;·&nbsp; July 2025 – August 2025</div>
+                        <ul class="card-body">
+                            <li>analysed and preprocessed millions of unstructured noisy records at a stealth startup
+                            </li>
+                            <li>designed and deployed a scalable backend pipeline to de-duplicate hotel data, raising
+                                accuracy by over 15% toward industry-grade results</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">OpenAI API</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Undergraduate Student Researcher — ML Systems</div>
+                        <div class="card-meta">MMVL Lab, IIT Jodhpur &nbsp;·&nbsp; Sept. 2024 – Present</div>
+                        <ul class="card-body">
+                            <li>built deep learning pipelines in PyTorch for cancer grading and medical imaging tasks
+                            </li>
+                            <li>contributed to multi-modal medical vision research and implemented published
+                                architectures</li>
+                            <li>implemented U-Net, LSTMs, GANs, and diffusion models from scratch</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Generative Models</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="projects">
+                <span class="section-label">Selected Projects</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">Semantic Code Refactorer</div>
+                        <div class="card-meta">AI / Full-Stack &nbsp;·&nbsp; <a
+                                href="https://github.com/Arxane/semantic-code-refactorer"
+                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">GitHub</a>
+                        </div>
+                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                            context-driven code refactoring using the Gemini API for intelligent semantic
+                            transformations. React frontend, FastAPI backend, PostgreSQL persistence.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Gemini API</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Multi-modal Cancer Grading Framework</div>
+                        <div class="card-meta">Deep Learning / Medical Vision &nbsp;·&nbsp; <a
+                                href="https://www.linkedin.com/company/machine-and-medical-vision-group-mmvg/"
+                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">MMVL
+                                Lab</a></div>
+                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                            attention-based MIL framework for cancer grading with feature fusion and generative models.
+                            trained on over 5,000 images.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">MIL</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">TSPN PyTorch Implementation</div>
+                        <div class="card-meta">Research / Transformers &nbsp;·&nbsp; <a
+                                href="https://github.com/Arxane/TSPN"
+                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">GitHub</a>
+                        </div>
+                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                            from-scratch PyTorch implementation of a Transformer-based Set Prediction Network as a
+                            modular component for research pipelines.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="skills">
+                <span class="section-label">Core Technologies</span>
+                <div>
+                    <div class="skill-row">
+                        <span class="skill-label">Languages</span>
+                        <span class="skill-value">C/C++, Python</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Frameworks & Libraries</span>
+                        <span class="skill-value">PyTorch, TensorFlow, Scikit-learn, LangChain, LangGraph, OpenCV,
+                            Keras, NumPy, Pandas</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">AI & ML</span>
+                        <span class="skill-value">Deep Learning, Computer Vision, Multi-modal Deep-Learning frameworks,
+                            Vision-Language Models, Generative models, Visual Understanding</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Backend & Systems</span>
+                        <span class="skill-value">FastAPI, PostgreSQL, REST API, Docker, Git</span>
                     </div>
                 </div>
-                
-                <div class="card-bg p-6 rounded-lg border border-accent">
-                    <h3 class="text-xl font-semibold mb-1 text-white">Software Development Intern - AI/ML</h3>
-                    <p class="text-sm font-mono text-body mb-3">Nova VistaAI | July 2025 - August 2025</p>
-                    <ul class="list-disc pl-5 space-y-2 text-body">
-                        <li>interned at a "Stealth Startup" where i worked on analysing and preprocessing high amounts (millions) of unstructured and noisy data.</li>
-                        <li>designed and deployed a scalable backend pipeline to de-duplicate Hotel Data, increasing pre-existing pipeline accuracy by more than 15%, reaching close to industry-grade results</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono mt-4">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">FastAPI</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">OpenAI API</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">REST APIs</span>
-                    </div>
-                </div>
+            </section>
 
-                <div class="card-bg p-6 rounded-lg border border-accent">
-                    <h3 class="text-xl font-semibold mb-1 text-white">Undergraduate Student Researcher - ML Systems</h3>
-                    <p class="text-sm font-mono text-body mb-3">MMVL Lab, IIT Jodhpur | Sept. 2024 - Present</p>
-                    <ul class="list-disc pl-5 space-y-2 text-body">
-                        <li>built deep learning pipelines using PyTorch for Cancer Grading and similar medical imaging tasks.</li>
-                        <li>contributed to research on Multi-modal medical vision technologies and developed implementations for research papers.</li>
-                        <li>implemented complex architectures like U-Net, LSTMs, and Generative models (GANs, Diffusion) from scratch.</li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono mt-4">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Deep Learning</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Machine Learning</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Generative Models</span>
-                    </div>
-                </div>
+            <footer class="footer">
+                <p class="footer-text">© 2025 Mayank Vishwakarma</p>
+            </footer>
 
-            </div>
-        </section>
+        </div>
+    </main>
 
-        <section id="projects" class="mb-20">
-            <h2 class="text-lg font-mono mb-8 accent-color">03. Selected Projects</h2>
-            <div class="space-y-12">
-                
-                <div class="card-bg p-6 rounded-lg border border-accent" id="project-code-refactorer">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Semantic Code Refactorer</h3>
-                    <p class="text-sm font-mono text-body mb-3">AI / Full-Stack</p>
-                    <p class="text-sm font-mono text-body mb-3"><a href="https://github.com/Arxane/semantic-code-refactorer">Github</a></p>
-                    <p class="text-body mb-4">
-                        context-driven code refactoring tool utilizing the Gemini API for intelligent semantic transformations. includes a responsive React-based frontend and FastAPI backend.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Gemini API</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">FastAPI</span>
-                    </div>
-                </div>
-
-                <div class="card-bg p-6 rounded-lg border border-accent" id="project-cancer-grading">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Multi-modal Cancer Grading Framework</h3>
-                    <p class="text-sm font-mono text-body mb-3">Deep Learning / Medical Vision</p>
-                    <p class="text-sm font-mono text-body mb-3"><a href="https://www.linkedin.com/company/machine-and-medical-vision-group-mmvg/">MMVL Lab</a></p>
-                    <p class="text-body mb-4">
-                        attention-based multiple instance learning (MIL) framework developed for cancer grading, incorporating feature fusion and generative models. trained on >5000 images at MMVL Lab.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Computer Vision</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">MIL</span>
-                    </div>
-                </div>
-
-                <div class="card-bg p-6 rounded-lg border border-accent" id="project-tspn-impl">
-                    <h3 class="text-xl font-semibold mb-2 text-white">TSPN PyTorch Implementation</h3>
-                    <p class="text-sm font-mono text-body mb-3">Research Module / Transformers</p>
-                    <p class="text-sm font-mono text-body mb-3"><a href="https://github.com/Arxane/TSPN">Github</a></p>
-                    <p class="text-body mb-4">
-                        a novel, from scratch implementation of a Transformer-based Set Prediction Network (TSPN) in PyTorch, developed as a core module for advanced research applications.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono">
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">PyTorch</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Transformers</span>
-                        <span class="text-white bg-gray-900 px-3 py-1 rounded-full">Deep Learning</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="mb-20">
-            <h2 class="text-lg font-mono mb-8 accent-color">04. Core Technologies</h2>
-            <div class="space-y-6">
-                
-                <div class="flex items-start">
-                    <span class="minimal-dot mt-2"></span>
-                    <p class="ml-4 text-body flex-1">
-                        <strong class="text-white">Programming Languages:</strong> C/C++, Rust, Python
-                    </p>
-                </div>
-
-                <div class="flex items-start">
-                    <span class="minimal-dot mt-2"></span>
-                    <p class="ml-4 text-body flex-1">
-                        <strong class="text-white">ML/AI Frameworks:</strong> PyTorch, TensorFlow, Scikit-learn, LangChain, LangGraph, OpenCV, Keras, Pandas, NumPy
-                    </p>
-                </div>
-                
-                <div class="flex items-start">
-                    <span class="minimal-dot mt-2"></span>
-                    <p class="ml-4 text-body flex-1">
-                        <strong class="text-white">Backend & Systems:</strong> FastAPI, PostgreSQL, REST API, Docker, Git
-                    </p>
-                </div>
-                
-            </div>
-        </section>
-
-        <footer class="text-center pt-8 border-t border-gray-900">
-            <p class="text-s text-gray-700 mt-2">
-                &copy; 2025 Mayank Vishwakarma.
-            </p>
-        </footer>
-
-    </div>
     <script>
-    const container = document.getElementById("network-container");
+        const html = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        const iconMoon = document.getElementById('iconMoon');
+        const iconSun = document.getElementById('iconSun');
 
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-
-    container.appendChild(canvas);
-
-    let width;
-    let height;
-    let centerX;
-
-    const NODES = 100;
-    const MAX_DISTANCE = 180;
-    const PULSE_COUNT = 30;
-
-    const nodes = [];
-    let edges = [];
-    const pulses = [];
-
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        centerX = width / 2;
-
-        canvas.width = width;
-        canvas.height = height;
-
-        createNodes();
-        buildEdges();
-    }
-
-    window.addEventListener("resize", resize);
-
-    function createNodes() {
-        nodes.length = 0;
-
-        for (let i = 0; i < NODES; i++) {
-
-            const leftSide = Math.random() > 0.5;
-
-            nodes.push({
-                baseX: leftSide
-                    ? width * (0.03 + Math.random() * 0.18)
-                    : width * (0.79 + Math.random() * 0.18),
-
-                baseY: Math.random() * height,
-
-                phase: Math.random() * Math.PI * 2,
-
-                x: 0,
-                y: 0
-            });
-        }
-    }
-
-    function buildEdges() {
-        edges = [];
-
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i + 1; j < nodes.length; j++) {
-
-                const dx = nodes[i].baseX - nodes[j].baseX;
-                const dy = nodes[i].baseY - nodes[j].baseY;
-
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < MAX_DISTANCE) {
-                    edges.push({
-                        a: i,
-                        b: j,
-                        distance
-                    });
-                }
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                iconMoon.style.display = 'none';
+                iconSun.style.display = 'block';
+            } else {
+                iconMoon.style.display = 'block';
+                iconSun.style.display = 'none';
             }
+            localStorage.setItem('theme', theme);
         }
 
-        pulses.length = 0;
+        const saved = localStorage.getItem('theme');
+        applyTheme(saved === 'light' ? 'light' : 'dark');
 
-        for (let i = 0; i < PULSE_COUNT; i++) {
-            pulses.push({
-                edgeIndex: Math.floor(Math.random() * edges.length),
-                progress: Math.random(),
-                speed: 0.001 + Math.random() * 0.002
-            });
+        btn.addEventListener('click', () => {
+            applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        const heroBg = document.getElementById('heroBg');
+        const heroEl = document.getElementById('hero');
+
+        function onScroll() {
+            const scrollY = window.scrollY;
+            const heroHeight = heroEl.offsetHeight;
+            const fadeEnd = heroHeight * 0.6;
+            const opacity = Math.max(0, 1 - scrollY / fadeEnd);
+            heroBg.style.opacity = opacity;
         }
-    }
 
-    function centerFade(x) {
-        const safeZone = width * 0.25;
-
-        return Math.min(
-            Math.abs(x - centerX) / safeZone,
-            1
-        );
-    }
-
-    resize();
-
-    function animate() {
-
-        requestAnimationFrame(animate);
-
-        const time = performance.now() * 0.001;
-
-        ctx.clearRect(0, 0, width, height);
-
-        const breathe =
-            1 + Math.sin(time * 0.35) * 0.08;
-
-        // Update node positions
-        nodes.forEach(node => {
-
-            node.x =
-                node.baseX +
-                Math.sin(time * 0.4 + node.phase) *
-                10 *
-                breathe;
-
-            node.y =
-                node.baseY +
-                Math.cos(time * 0.3 + node.phase) *
-                10 *
-                breathe;
-        });
-
-        // Draw connections
-        edges.forEach(edge => {
-
-            const a = nodes[edge.a];
-            const b = nodes[edge.b];
-
-            const mx = (a.x + b.x) / 2;
-
-            const fade = centerFade(mx);
-
-            const alpha =
-                (1 - edge.distance / MAX_DISTANCE) *
-                0.18 *
-                fade;
-
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-
-            ctx.strokeStyle =
-                `rgba(255,255,255,${alpha})`;
-
-            ctx.lineWidth = 1;
-            ctx.stroke();
-        });
-
-        // Draw nodes
-        nodes.forEach(node => {
-
-            const fade = centerFade(node.x);
-
-            ctx.beginPath();
-            ctx.arc(node.x, node.y, 1.8, 0, Math.PI * 2);
-
-            ctx.fillStyle =
-                `rgba(255,255,255,${0.15 * fade})`;
-
-            ctx.fill();
-        });
-
-        // Draw moving pulses
-        pulses.forEach(pulse => {
-
-            pulse.progress += pulse.speed;
-
-            if (pulse.progress >= 1) {
-                pulse.progress = 0;
-                pulse.edgeIndex =
-                    Math.floor(Math.random() * edges.length);
-            }
-
-            const edge = edges[pulse.edgeIndex];
-
-            if (!edge) return;
-
-            const start = nodes[edge.a];
-            const end = nodes[edge.b];
-
-            const x =
-                start.x +
-                (end.x - start.x) *
-                pulse.progress;
-
-            const y =
-                start.y +
-                (end.y - start.y) *
-                pulse.progress;
-
-            const fade = centerFade(x);
-
-            const glow =
-                0.25 +
-                Math.sin(time * 4) * 0.1;
-
-            ctx.beginPath();
-            ctx.arc(x, y, 2.5, 0, Math.PI * 2);
-
-            ctx.fillStyle =
-                `rgba(255,255,255,${glow * fade})`;
-
-            ctx.fill();
-        });
-    }
-
-    animate();
+        window.addEventListener('scroll', onScroll, {passive: true});
     </script>
+
 </body>
+
 </html>
