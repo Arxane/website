@@ -63,6 +63,34 @@
                 <h1 class="page-title">Project Portfolio</h1>
             </div>
 
+            <div class="project-card" id="polymath">
+                <div class="project-card-title">Polymath</div>
+                <div class="project-card-type">LLM / LoRA Composition</div>
+                <div class="project-card-timeline">August 2026 – Present</div>
+
+                <div class="project-section-title">Goal &amp; Impact</div>
+                <p class="card-text">
+                    a dynamically composable LoRA-based architecture for domain-specialized language modeling.
+                    math LoRA specialist improved accuracy from 22.22% to 63.89% on a held-out evaluation set.
+                </p>
+
+                <div class="project-section-title">Architecture</div>
+                <ul class="project-body">
+                    <li><strong class="strong-label">Base Model:</strong> Qwen2.5-1.5B with domain-specific LoRA adapters routed per prompt.</li>
+                    <li><strong class="strong-label">Composition:</strong> Weight-space composition using learned mixture coefficients for multi-specialist inference.</li>
+                    <li><strong class="strong-label">Evaluation:</strong> Quantitative pipeline comparing base and specialized models across domains.</li>
+                </ul>
+
+                <div class="tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">PEFT</span>
+                    <span class="tag">Hugging Face</span>
+                    <span class="tag">TRL</span>
+                    <span class="tag">CUDA</span>
+                </div>
+                <a href="https://github.com/Arxane" class="project-link">View on GitHub &rarr;</a>
+            </div>
+
             <div class="project-card" id="refactorer">
                 <div class="project-card-title">Semantic Code Refactorer</div>
                 <div class="project-card-type">AI / Full-Stack Application</div>
@@ -70,7 +98,7 @@
 
                 <div class="project-section-title">Goal &amp; Impact</div>
                 <p class="card-text">
-                    automate intelligent, context-aware code improvements beyond syntax checking. analyzes abstract
+                    automates intelligent, context-aware code improvements beyond syntax checking. analyzes abstract
                     semantics to suggest and execute complex transformations — renaming, restructuring, simplification —
                     vastly improving code quality and maintainability.
                 </p>

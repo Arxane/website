@@ -15,12 +15,10 @@
             <a href="project.html" class="nav-link">PROJECTS</a>
 
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-                <!-- Moon icon (shown in dark mode) -->
                 <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
                 </svg>
-                <!-- Sun icon (shown in light mode) -->
                 <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                     stroke-linecap="round" stroke-linejoin="round" style="display:none">
                     <circle cx="12" cy="12" r="5" />
@@ -59,7 +57,6 @@
     </nav>
 
     <section class="hero" id="hero">
-        <div class="hero-bg" id="heroBg" style="background-image: url('pexels-eberhardgross-1367192.jpg')"></div>
         <div class="hero-content">
             <img src="7552GgTV_400x400.jpg" alt="Mayank Vishwakarma" class="hero-avatar">
             <h1 class="hero-name">Mayank Vishwakarma</h1>
@@ -91,31 +88,32 @@
 
                     <div class="card">
                         <div class="card-title">Undergraduate Researcher</div>
-                        <div class="card-meta">VL2G Lab &nbsp;·&nbsp; April 2026 – Present</div>
+                        <div class="card-meta">VL2G Lab, IIT Jodhpur &nbsp;·&nbsp; May 2026 – Present</div>
                         <ul class="card-body">
-                            <li>working on next generation video-to-video retrieval and visual understanding</li>
-                            <li>studied and implemented various methodologies of semantic retrieval and visual
-                                understanding</li>
+                            <li>modified and fine-tuned LanguageBind's approach, achieving 1–2% improvement on retrieval tasks</li>
+                            <li>studied and implemented various methodologies of video-to-video retrieval and visual understanding, working on thousands of 5-minute+ videos</li>
                         </ul>
                         <div class="tags">
                             <span class="tag">Python</span>
                             <span class="tag">PyTorch</span>
                             <span class="tag">Deep Learning</span>
+                            <span class="tag">LanguageBind</span>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-title">Software Development Intern — AI/ML</div>
-                        <div class="card-meta">Nova VistaAI &nbsp;·&nbsp; July 2025 – August 2025</div>
+                        <div class="card-meta">NovaVistaAI &nbsp;·&nbsp; July 2025 – August 2025</div>
                         <ul class="card-body">
-                            <li>analysed and preprocessed millions of unstructured noisy records at a stealth startup
-                            </li>
-                            <li>designed and deployed a scalable backend pipeline to de-duplicate hotel data, raising
-                                accuracy by over 15% toward industry-grade results</li>
+                            <li>designed and deployed a scalable backend pipeline to de-duplicate hotel data, increasing accuracy of pre-existing pipeline by more than 15%</li>
+                            <li>integrated OpenAI API to standardize noisy, unstructured room data via LLM-based summarization</li>
+                            <li>cut LLM calls by 85% (7.2M to 1.1M) through caching, saving significant token credits</li>
+                            <li>achieved up to 99% true negative rate and 95%+ true positive rate, reaching near industry-grade results</li>
                         </ul>
                         <div class="tags">
                             <span class="tag">FastAPI</span>
                             <span class="tag">OpenAI API</span>
+                            <span class="tag">Scikit-learn</span>
                             <span class="tag">REST APIs</span>
                         </div>
                     </div>
@@ -124,11 +122,9 @@
                         <div class="card-title">Undergraduate Student Researcher — ML Systems</div>
                         <div class="card-meta">MMVL Lab, IIT Jodhpur &nbsp;·&nbsp; Sept. 2024 – Present</div>
                         <ul class="card-body">
-                            <li>built deep learning pipelines in PyTorch for cancer grading and medical imaging tasks
-                            </li>
-                            <li>contributed to multi-modal medical vision research and implemented published
-                                architectures</li>
-                            <li>implemented U-Net, LSTMs, GANs, and diffusion models from scratch</li>
+                            <li>achieved 90%+ accuracy on BCI data by building a Transformer-based Set Prediction Network, a novel approach to the feature regeneration problem</li>
+                            <li>contributed to multi-modal medical vision research and implemented published architectures</li>
+                            <li>implemented U-Net, LSTMs, GANs, and diffusion models from scratch in PyTorch</li>
                         </ul>
                         <div class="tags">
                             <span class="tag">PyTorch</span>
@@ -145,12 +141,27 @@
                 <div class="card-list">
 
                     <div class="card">
+                        <div class="card-title">Polymath</div>
+                        <div class="card-meta">LLM / LoRA Composition &nbsp;·&nbsp; <a
+                                href="https://github.com/Arxane">GitHub</a>
+                        </div>
+                        <p class="card-desc">
+                            dynamically composable LoRA-based architecture for domain-specialized language modeling over a shared Qwen2.5-1.5B base. math LoRA improved accuracy from 22% to 64% on a held-out evaluation set.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">PEFT</span>
+                            <span class="tag">Hugging Face</span>
+                            <span class="tag">CUDA</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
                         <div class="card-title">Semantic Code Refactorer</div>
                         <div class="card-meta">AI / Full-Stack &nbsp;·&nbsp; <a
-                                href="https://github.com/Arxane/semantic-code-refactorer"
-                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">GitHub</a>
+                                href="https://github.com/Arxane/semantic-code-refactorer">GitHub</a>
                         </div>
-                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                        <p class="card-desc">
                             context-driven code refactoring using the Gemini API for intelligent semantic
                             transformations. React frontend, FastAPI backend, PostgreSQL persistence.
                         </p>
@@ -164,10 +175,9 @@
                     <div class="card">
                         <div class="card-title">Multi-modal Cancer Grading Framework</div>
                         <div class="card-meta">Deep Learning / Medical Vision &nbsp;·&nbsp; <a
-                                href="https://www.linkedin.com/company/machine-and-medical-vision-group-mmvg/"
-                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">MMVL
+                                href="https://www.linkedin.com/company/machine-and-medical-vision-group-mmvg/">MMVL
                                 Lab</a></div>
-                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                        <p class="card-desc">
                             attention-based MIL framework for cancer grading with feature fusion and generative models.
                             trained on over 5,000 images.
                         </p>
@@ -181,10 +191,9 @@
                     <div class="card">
                         <div class="card-title">TSPN PyTorch Implementation</div>
                         <div class="card-meta">Research / Transformers &nbsp;·&nbsp; <a
-                                href="https://github.com/Arxane/TSPN"
-                                style="color:inherit;text-decoration:none;border-bottom:1px solid var(--border)">GitHub</a>
+                                href="https://github.com/Arxane/TSPN">GitHub</a>
                         </div>
-                        <p class="about-text" style="font-size:0.9rem;margin-top:0">
+                        <p class="card-desc">
                             from-scratch PyTorch implementation of a Transformer-based Set Prediction Network as a
                             modular component for research pipelines.
                         </p>
@@ -208,17 +217,54 @@
                     <div class="skill-row">
                         <span class="skill-label">Frameworks & Libraries</span>
                         <span class="skill-value">PyTorch, TensorFlow, Scikit-learn, LangChain, LangGraph, OpenCV,
-                            Keras, NumPy, Pandas</span>
+                            Keras, NumPy, Pandas, PEFT, Hugging Face</span>
                     </div>
                     <div class="skill-row">
                         <span class="skill-label">AI & ML</span>
                         <span class="skill-value">Deep Learning, Computer Vision, Multi-modal Deep-Learning frameworks,
-                            Vision-Language Models, Generative models, Visual Understanding</span>
+                            Vision-Language Models, Generative Models, Visual Understanding, Multiple-Instance Learning</span>
                     </div>
                     <div class="skill-row">
                         <span class="skill-label">Backend & Systems</span>
-                        <span class="skill-value">FastAPI, PostgreSQL, REST API, Docker, Git</span>
+                        <span class="skill-value">FastAPI, PostgreSQL, REST API, Docker, Git, SQL, Hugging Face</span>
                     </div>
+                </div>
+            </section>
+
+            <section class="section" id="achievements">
+                <span class="section-label">Achievements</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">Competitive Programming</div>
+                        <ul class="card-body">
+                            <li>Specialist on Codeforces</li>
+                            <li>1000+ rated on AtCoder</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Google Gen AI Intensive Camp</div>
+                        <ul class="card-body">
+                            <li>completed Google's Gen AI intensive program covering generative AI tools, LLMs, and prompt engineering</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="involvement">
+                <span class="section-label">Involvement</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">Mentor — Summer of RAID</div>
+                        <ul class="card-body">
+                            <li>introduced and guided 6 sophomores in Computer Vision, Machine Learning, and Deep Learning</li>
+                            <li>ran personal tutorials on PyTorch fundamentals and practical model building</li>
+                        </ul>
+                    </div>
+
                 </div>
             </section>
 
@@ -253,19 +299,6 @@
         btn.addEventListener('click', () => {
             applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         });
-
-        const heroBg = document.getElementById('heroBg');
-        const heroEl = document.getElementById('hero');
-
-        function onScroll() {
-            const scrollY = window.scrollY;
-            const heroHeight = heroEl.offsetHeight;
-            const fadeEnd = heroHeight * 0.6;
-            const opacity = Math.max(0, 1 - scrollY / fadeEnd);
-            heroBg.style.opacity = opacity;
-        }
-
-        window.addEventListener('scroll', onScroll, {passive: true});
     </script>
 
 </body>

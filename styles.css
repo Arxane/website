@@ -21,7 +21,7 @@
     --text-dim: #999999;
     --accent: #555555;
     --hover: #e8e8e8;
-    --nav-bg: rgba(13, 13, 13, 0.65);
+    --nav-bg: rgba(13, 13, 13, 0.85);
 }
 
 [data-theme="light"] {
@@ -34,7 +34,7 @@
     --text-dim: #555555;
     --accent: #888888;
     --hover: #141414;
-    --nav-bg: rgba(245, 244, 240, 0.68);
+    --nav-bg: rgba(245, 244, 240, 0.88);
 }
 
 /* ─── Base ───────────────────────────────────────────────── */
@@ -155,49 +155,14 @@ body {
 
 /* ─── Hero / Intro ───────────────────────────────────────── */
 .hero {
-    position: relative;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Placeholder — swap src in HTML */
-    background-image: none;
-    transition: opacity 0.1s linear;
-}
-
-/* Dark overlay on the image so text stays readable */
-.hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom,
-            rgba(13, 13, 13, 0.55) 0%,
-            rgba(13, 13, 13, 0.45) 60%,
-            rgba(13, 13, 13, 0.92) 100%);
-}
-
-[data-theme="light"] .hero-bg::after {
-    background: linear-gradient(to bottom,
-            rgba(245, 244, 240, 0.2) 0%,
-            rgba(245, 244, 240, 0.15) 60%,
-            rgba(245, 244, 240, 0.75) 100%);
+    padding: 9rem 2rem 4rem;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
     text-align: center;
-    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,7 +206,7 @@ body {
 
 /* ─── Main Content ───────────────────────────────────────── */
 .main-content {
-    padding-top: 6rem;
+    padding-top: 2rem;
     padding-bottom: 6rem;
 }
 
@@ -312,6 +277,18 @@ body {
     line-height: 1.6;
 }
 
+.card-meta a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-meta a:hover {
+    color: var(--hover);
+    border-color: var(--hover);
+}
+
 .card-body {
     font-size: 0.9rem;
     color: var(--text-dim);
@@ -332,6 +309,13 @@ body {
     color: var(--border);
     font-size: 0.75rem;
     top: 0.12em;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-top: 0;
 }
 
 .tags {
@@ -451,18 +435,6 @@ body {
 
 .project-section-title:first-child {
     margin-top: 0;
-}
-
-.card-meta a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.card-meta a:hover {
-    color: var(--hover);
-    border-color: var(--hover);
 }
 
 .strong-label {
