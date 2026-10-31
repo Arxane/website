@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Vishwakarma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="project.html" class="nav-link">PROJECTS</a>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+                </svg>
+                <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+            </button>
+
+            <a href="https://x.com/mayank_vish65" target="_blank" aria-label="X" class="nav-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.9 1.153z" />
+                </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/mayankvish" target="_blank" aria-label="LinkedIn" class="nav-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.565-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+
+            <a href="https://github.com/Arxane" target="_blank" aria-label="GitHub" class="nav-icon">
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1KEkfbIp7CUiXyb_kg7imKbFnSyP-iK64/view?usp=drive_link" target="_blank" aria-label="CV" rel="noopener noreferrer" class="nav-link">CV</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <canvas id="gol-canvas" class="gol-canvas" aria-hidden="true"></canvas>
+        <div class="hero-content">
+            <img src="me1.jpg" alt="Mayank Vishwakarma" class="hero-avatar">
+            <h1 class="hero-name">Mayank Vishwakarma</h1>
+            <p class="hero-sub">
+                <span>IIT Jodhpur</span>
+                <a href="mailto:mayankvish65@gmail.com">mayankvish65@gmail.com</a>
+            </p>
+        </div>
+    </section>
+
+    <main class="main-content" id="mainContent">
+        <div class="container">
+
+            <section class="section" id="about">
+                <span class="section-label">About</span>
+                <p class="about-text">
+                    a final year student at IIT Jodhpur, specializing in building novel deep learning systems &amp;
+                    products that solve complex tasks.
+                </p>
+                <p class="about-text">
+                    my passion lies in solving open problems, from AI to competitive programming.
+                </p>
+                <span class="about-mono">i hate high level api wrappers :)</span>
+                <span class="about-mono">i thrive in pressure :P</span>
+            </section>
+
+            <section class="section" id="experience">
+                <span class="section-label">Experience</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">Undergraduate Researcher</div>
+                        <div class="card-meta">VL2G Group, IIT Jodhpur &nbsp;·&nbsp; May 2026 – Present</div>
+                        <ul class="card-body">
+                            <li>modified and fine-tuned LanguageBind's approach, achieving an improvement of 1–2% on retrieval benchmark datasets</li>
+                            <li>studied and implemented various methodologies for video-to-video retrieval and visual understanding, working on datasets of thousands of 5-minute+ videos</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">LanguageBind</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Undergraduate Student Researcher — ML Systems</div>
+                        <div class="card-meta">MMVL Lab, IIT Jodhpur &nbsp;·&nbsp; Sept 2024 – Present</div>
+                        <ul class="card-body">
+                            <li>achieved 90%+ accuracy on BCI data by building a Transformer-based Set Prediction Network</li>
+                            <li>built deep learning pipelines using PyTorch for cancer grading and related medical imaging tasks</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Software Development Intern — AI/ML</div>
+                        <div class="card-meta">NovaVistaAI &nbsp;·&nbsp; July 2025 – Aug 2025</div>
+                        <ul class="card-body">
+                            <li>designed and deployed a scalable backend pipeline to de-duplicate hotel data, increasing accuracy of the pre-existing pipeline by more than 15%</li>
+                            <li>cut LLM calls by 85% (7.2M to 1.1M) through caching, and achieved up to 99% true negative / 95%+ true positive rate, reaching close to industry-grade results</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">OpenAI API</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Mentor — Summer of RAID</div>
+                        <div class="card-meta">RAID, IIT Jodhpur &nbsp;·&nbsp; June 2026 – Sep 2026</div>
+                        <ul class="card-body">
+                            <li>introduced and guided 6 sophomores in Computer Vision, Machine Learning, and Deep Learning</li>
+                            <li>ran personal tutorials on PyTorch fundamentals and practical model building</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Mentorship</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Undergraduate Teaching Assistant</div>
+                        <div class="card-meta">Dept. of CSE, IIT Jodhpur</div>
+                        <ul class="card-body">
+                            <li>built tutorials and mentored sophomores for the Introduction to Machine Learning course under Dr. Hardik Jain</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Teaching</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="projects">
+                <span class="section-label">Selected Projects</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">Polymath</div>
+                        <div class="card-meta">LLM / LoRA Composition &nbsp;·&nbsp; Aug 2026 – Present &nbsp;·&nbsp; <a href="https://github.com/Arxane">GitHub</a></div>
+                        <p class="card-desc">
+                            lightweight multi-specialist SLM routing prompts to domain-specific LoRA adapters over a shared Qwen2.5-1.5B base. math LoRA improved accuracy from 22.22% to 63.89% on a held-out evaluation set.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">PEFT</span>
+                            <span class="tag">TRL</span>
+                            <span class="tag">CUDA</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">TSPN PyTorch Implementation</div>
+                        <div class="card-meta">Research / Transformers &nbsp;·&nbsp; Nov 2025 – Present &nbsp;·&nbsp; <a href="https://github.com/Arxane/TSPN">GitHub</a></div>
+                        <p class="card-desc">
+                            Transformer-based Set Prediction Network built from scratch in PyTorch as a modular component for research pipelines, developed at MMVL Lab, IIT Jodhpur.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">NumPy</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Semantic Code Refactorer</div>
+                        <div class="card-meta">AI / Full-Stack &nbsp;·&nbsp; May 2025 – Jun 2025 &nbsp;·&nbsp; <a href="https://github.com/Arxane/semantic-code-refactorer">GitHub</a></div>
+                        <p class="card-desc">
+                            AI-based context-driven code refactoring tool automating intelligent improvements. React frontend, FastAPI backend, PostgreSQL persistence, Gemini API for semantic transformations.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">Gemini API</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">React</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="section" id="skills">
+                <span class="section-label">Core Technologies</span>
+                <div>
+                    <div class="skill-row">
+                        <span class="skill-label">Languages</span>
+                        <span class="skill-value">Python, C, C++</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Frameworks & Libraries</span>
+                        <span class="skill-value">PyTorch, TensorFlow, Keras, NumPy, LangChain, LangGraph, Pandas, Matplotlib, Scikit-learn, PostgreSQL, FastAPI, PEFT</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">AI & ML</span>
+                        <span class="skill-value">Deep Learning, Computer Vision, Multi-modal Deep Learning, Multiple-Instance Learning, Fusion Models, Vision-Language Models, Generative Models (GANs, Diffusion Models), Visual Understanding</span>
+                    </div>
+                    <div class="skill-row">
+                        <span class="skill-label">Other</span>
+                        <span class="skill-value">REST API, Git, GitHub, Command-line tools, SQL, Hugging Face</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="achievements">
+                <span class="section-label">Achievements</span>
+                <div class="card-list">
+
+                    <div class="card">
+                        <div class="card-title">JEE Mains &amp; Advanced</div>
+                        <ul class="card-body">
+                            <li>top 1% in JEE Mains</li>
+                            <li>top 2% in JEE Advanced</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-title">Competitive Programming</div>
+                        <ul class="card-body">
+                            <li>Specialist (1468) on Codeforces</li>
+                            <li>1000+ rated on AtCoder</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p class="footer-text">© 2025 Mayank Vishwakarma</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script src="gol.js"></script>
+    <script>
+        const html = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        const iconMoon = document.getElementById('iconMoon');
+        const iconSun = document.getElementById('iconSun');
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            if (theme === 'light') {
+                iconMoon.style.display = 'none';
+                iconSun.style.display = 'block';
+            } else {
+                iconMoon.style.display = 'block';
+                iconSun.style.display = 'none';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        const saved = localStorage.getItem('theme');
+        applyTheme(saved === 'light' ? 'light' : 'dark');
+
+        btn.addEventListener('click', () => {
+            applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        if (window.GoL) {
+            window.GoL.initGoL('gol-canvas', 'hero');
+        }
+    </script>
+
+</body>
+
+</html>
